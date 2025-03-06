@@ -3,109 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attractive Form</title>
+    <title>Tamanna | Creative Designer</title>
     <style>
+        /* General Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
         }
+
         body {
+            background: #0a0a0a;
+            color: white;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00ffcc;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00ffcc;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background: #121212;
-        }
-        .form-container {
-            background: #1e1e1e;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 255, 150, 0.5);
+            background: linear-gradient(120deg, #00ffcc, #0033cc);
             text-align: center;
-            max-width: 400px;
-            width: 100%;
+            animation: fadeIn 1.5s ease-in-out;
         }
-        h2 {
-            color: #0f0;
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
             margin-bottom: 20px;
         }
-        .input-box {
-            position: relative;
-            margin-bottom: 20px;
-        }
-        .input-box input {
-            width: 100%;
-            padding: 12px;
-            background: transparent;
-            border: 2px solid #0f0;
-            border-radius: 5px;
-            outline: none;
-            color: white;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-        .input-box label {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            color: #aaa;
-            transition: 0.3s;
-        }
-        .input-box input:focus + label,
-        .input-box input:valid + label {
-            top: -10px;
-            left: 10px;
-            font-size: 12px;
-            color: #0f0;
-        }
-        .input-box input:focus {
-            border-color: #0f0;
-            box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
-        }
+
         .btn {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(90deg, #0f0, #00d4ff);
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
+            padding: 12px 25px;
+            font-size: 18px;
+            background: white;
             color: black;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
         }
+
         .btn:hover {
+            background: #00ffcc;
+            color: black;
+            box-shadow: 0 0 10px #00ffcc;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: #00ffcc;
+            margin: 10px auto;
+        }
+
+        /* About Section */
+        .about {
+            background: #111;
+        }
+
+        .about p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: #1a1a1a;
+        }
+
+        .project-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 10px rgba(0, 255, 150, 0.7);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #181818;
+        }
+
+        /* Footer */
+        footer {
+            background: black;
+            padding: 20px;
+            color: white;
+        }
+
+        /* Animation Effects */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
 
-    <div class="form-container">
-        <h2>Contact Us</h2>
-        <form action="#" method="POST">
-            <div class="input-box">
-                <input type="text" name="name" required>
-                <label>Full Name</label>
+    <!-- Header Section -->
+    <header>
+        <h1 class="logo">Tamanna</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Hello, I'm Tamanna</h1>
+        <p>Creative Designer | Developer | Innovator</p>
+        <a href="#contact" class="btn">Get in Touch</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about fade-in">
+        <h2>About Me</h2>
+        <p>I am Tamanna, a passionate designer and developer, crafting stunning and interactive web experiences.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects fade-in">
+        <h2>My Projects</h2>
+        <div class="project-container">
+            <div class="project-card">
+                <h3>Project 1</h3>
+                <p>Beautiful interactive website.</p>
             </div>
-            <div class="input-box">
-                <input type="email" name="email" required>
-                <label>Email</label>
+            <div class="project-card">
+                <h3>Project 2</h3>
+                <p>Innovative tech-driven solution.</p>
             </div>
-            <div class="input-box">
-                <input type="text" name="subject" required>
-                <label>Subject</label>
-            </div>
-            <div class="input-box">
-                <input type="text" name="message" required>
-                <label>Message</label>
-            </div>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
-    </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact fade-in">
+        <h2>Contact Me</h2>
+        <p>Let's collaborate and build something amazing!</p>
+        <a href="mailto:tamanna@example.com" class="btn">Email Me</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Tamanna. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll(".fade-in");
+
+            function revealSections() {
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (sectionTop < windowHeight - 100) {
+                        section.classList.add("visible");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", revealSections);
+            revealSections();
+        });
+    </script>
 
 </body>
 </html>
+>
